@@ -27,6 +27,16 @@ public class Request {
     {
         this.connection = connection;
     }
+
+     
+
+     public ResultSet  query(String table, String query) { ResultSet resultSet = null;
+
+     try{ Statement stm = this.getConnection().createStatement();
+
+    resultSet = stm.executeQuery(query); } catch(SQLException e) { System.out.println(e.getMessage()); System.out.println(e.getStackTrace()); }
+
+    return resultSet; }
     
     public ResultSet select(String table, String[] criteria)
     {
