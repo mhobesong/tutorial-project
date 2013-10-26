@@ -30,11 +30,15 @@ public class Request {
 
      
 
-     public ResultSet  query(String table, String query) { ResultSet resultSet = null;
+    public ResultSet  query(String table, String query) {
+         
+    ResultSet resultSet = null;
 
-     try{ Statement stm = this.getConnection().createStatement();
+    try{ Statement stm = this.getConnection().createStatement();
 
-    resultSet = stm.executeQuery(query); } catch(SQLException e) { System.out.println(e.getMessage()); System.out.println(e.getStackTrace()); }
+    resultSet = stm.executeQuery(query); 
+    }
+    catch(SQLException e) { System.out.println(e.getMessage()); System.out.println(e.getStackTrace()); }
 
     return resultSet; }
     
