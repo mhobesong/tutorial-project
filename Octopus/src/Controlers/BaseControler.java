@@ -48,7 +48,7 @@ public class BaseControler {
     }
     
     /**
-     * Permet charger une vue a afficher.
+     * Cette function permet charger une vue a afficher.
      * @param view Le nom de la vue à afficher.
      * @return 
      */

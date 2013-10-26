@@ -163,7 +163,7 @@ public class Request {
     }
 
     /**
-     * @return la connexion utiliser
+     * @return la reference a connexion utiliser
      */
     public Connection getConnection() {
         return connection;
