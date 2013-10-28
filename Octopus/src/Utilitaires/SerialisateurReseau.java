@@ -14,16 +14,14 @@ public class SerialisateurReseau
     /**
      * Serialise un objet et le stoke sur le reseau.
      * @param o l'object a serialiser sur le disque.
-     * @param nomServeur Le nom du serveur sur lequel envoyer l'objet serialiser.
-     * @param port Le numero de port du serveur sur lequel envoyer l'objet
-     * serialiser.
+     * @param client Le Socket utiliser par la machine client pour communiquer
+     * avec la machine qui recois l'objet serialiser.
      */ 
-   public static void serialiser(Object o, String nomServeur, int port)
+   public void serialiser(Object o, Socket client)
    {
       try
       {
         
-         Socket client = new Socket(serverName, port);
          OutputStream outToServer = client.getOutputStream();
          
          ObjectOutputStream out = new ObjectOutputStream(outToServer);

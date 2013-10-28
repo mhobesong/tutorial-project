@@ -13,20 +13,18 @@ public class DeserialisateurReseau{
     
     /**
      * Deserialise un objet stoker sur le disque.
-     * @param port Le port sur lequel recuperer l'objet a serialiser.
+     * @param serverSocket Le Socket utiliser pour communiquer avec la machine
+     * qui envois la class serialiser.
      * @return l'object deserialiser.
      */ 
-    public static Object Deserialiser(int port)
+    public Object Deserialiser(ServerSocket serverSocket)
     {
         
         Object o = null;
-        ServerSocket serverSocket;
-        serverSocket = new ServerSocket(port);
-        serverSocket.setSoTimeout(10000);
         try
       {
-          Socket server = serverSocket.accept();
-          DataInputStream inReseau = new DataInputStream(server.getInputStream());
+          
+         DataInputStream inReseau = new DataInputStream(serverSocket.getInputStream());
           
          ObjectInputStream in = new ObjectInputStream(inReseau);
          
@@ -36,7 +34,7 @@ public class DeserialisateurReseau{
          
          inReseau.close();
          
-         new DataOutputStream(server.getOutputStream());
+         //new DataOutputStream(serverSocket.getOutputStream());
          
       }catch(IOException i)
       {
