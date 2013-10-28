@@ -30,7 +30,7 @@ public class Deserialisateur{
       }catch(IOException i)
       {
          i.printStackTrace();
-         return;
+         return o;
       }
       
       return o;

@@ -24,7 +24,7 @@ public class Serialisateur{
         {
          FileOutputStream fileOut = new FileOutputStream(path);
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
-         out.writeObject(e);
+         out.writeObject(o);
          out.close();
          fileOut.close();
       }catch(IOException i)
