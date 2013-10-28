@@ -3,6 +3,9 @@
  * 
  * Responsable de serialiser un objet et de l'envoyer sur le reseau.
  **/
+ 
+ package Utilitaires;
+ 
 import java.net.*;
 import java.io.*;
 
@@ -25,6 +28,8 @@ public class SerialisateurReseau
          
          ObjectOutputStream out = new ObjectOutputStream(outToServer);
          out.writeObject(o);
+         
+         
          out.close();
          
          InputStream inFromServer = client.getInputStream();
